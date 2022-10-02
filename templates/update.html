@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+  update
+{% endblock title %}
+
+{% block body %}
+<div class="  px-3  pt-4  " style="margin: 20px auto; padding:20px; width:70%; ">
+
+
+  {% if book %}
+    <h4 class="text-center">update - <i> {{book.title |title }} </i></h4>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class=" my-3">
+         <label for="exampleInputEmail1" class="form-label">Title</label>
+         <input type="text" class="form-control" value="{{ book.title }}" name="title" id="exampleInputEmail1" aria-describedby="emailHelp">
+         
+         <div class=" my-3">
+           <label for="floatingTextarea2">Description</label>
+         <input type="text" class="form-control" value="{{ book.description }}" id="exampleInputEmail1" aria-describedby="emailHelp" name="description" style="height: 100px">
+           </div>
+
+           <div class="mb-3 text-center">
+            {% if book.cover %}
+                <img src="{{ book.cover.url }}" alt="image here" style="border-radius:10px ;">
+            {% endif %}
+           </div>
+
+       <div class="mb-3">
+         <label for="formFileLg" class="form-label">{{ book.cover.name }}</label>
+         <input class="form-control form-control-lg" id="formFileLg" name="cover" type="file">
+       </div>
+      
+       <button type="submit" class="btn btn-primary">Update</button>
+       <a  href="{% url 'home' %}" class="btn btn-primary">🏠</a>
+
+       
+      </form>
+      {% endif %}
+
+  </div>
+  
+{% endblock body %}

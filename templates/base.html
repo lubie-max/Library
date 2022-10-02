@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+
+      body {
+        font-family: 'Roboto Mono', monospace;
+        /* padding-top: 50px ; */
+        background: rgba(199, 199, 233, 0.062);
+      }
+
+      .maincontainer{
+        /* padding-top: 30px; */
+        /* background: rgb(185, 206, 214); */
+        /* background: linear-gradient(80deg, rgb(42, 140, 153),rgb(3, 89, 122),rgb(14, 188, 211)100%) */
+        bottom: 0px;
+        margin: auto;
+
+        
+      }
+
+   
+
+      .formclass{
+        padding: 25px;
+      }
+
+    </style>
+    {% load static %}
+    
+    <title>
+        {% block title %}
+          
+        {% endblock title %}
+    </title>
+  </head>
+  <body background="{% static 'bg.jpg' %}" >
+    <nav class="navbar navbar-expand-sm text-right navbar-dark bg-dark">
+        <div class="container-fluid ">
+
+          <a class="navbar-brand mx-3" href='/'> 📚 </a>
+ </div>
+
+<div class="mx-4 " style="display: flex; flex-wrap:nowrap;">
+
+{% if request.user.is_authenticated %}
+
+               
+              <i class="text-white">{{request.user |title}}</i>
+              
+              {% endif %} 
+
+
+ {% if request.user.is_authenticated %}
+              <a href="{% url 'logout' %}"> 
+                <button class="btn btn-sm btn-success mx-4"> Logout</button></a>
+              
+              
+              {% else %}
+              <a href="{% url 'login' %}">
+                <button class="btn btn-sm btn-success mx-4"> Login</button></a>
+                
+                
+ {% endif %}
+
+
+
+            {% block searchblock %}
+            
+              
+            {% endblock searchblock %}
+            
+          </div>
+        </div>
+      </nav>
+<div style="width: 65%; margin: 0 auto;">
+  {% for message in  messages %}
+
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show sm  mx-4" role="alert" id= "alert-1">
+  <strong> {{message}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+</div>
+
+      {% block body %}
+
+{% endblock body %}
+
+<footer class="fixed-bottom" style="margin-top: 10px; color: white; background-color: black; padding: 20px;">
+  <div class="d-flex" style="display: flex; justify-content: space-between;">
+
+    <span>2022 &#169; keyword.io</span>
+    <span class="text-muted">by Lubna Shaikh</span>
+  </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+  create
+{% endblock title %}
+
+{% block body %}
+  <div>
+
+    <div style="margin: 20px auto; padding:20px; width:70%;"">
+      <h4 class="text-center my-3">Add Book</h4>
+
+    <form enctype="multipart/form-data" method="post">
+ {% csrf_token %}
+      <div class=" my-3"  >
+         <label for="exampleInputEmail1" class="form-label">Title</label>
+         <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+         
+         <div class=" my-3">
+             <textarea class="form-control"  id="floatingTextarea2" name="description" style="height: 100px"></textarea>
+             <label for="floatingTextarea2">Description</label>
+           </div>
+     
+       <div class="mb-3">
+         <label for="formFileLg" class="form-label"> Add book cover</label>
+         <input class="form-control form-control-lg" name='cover' id="formFileLg" type="file">
+       </div>
+      
+       <button type="submit" class="btn btn-primary">Create</button>
+       <a  href="{% url 'home' %}" class="btn btn-primary">🏠</a>
+
+     </form>
+
+  </div>
+</div>
+  
+{% endblock body %}

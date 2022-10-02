@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+  
+
+
+<div class="  px-3  pt-4  " style="margin: 20px auto; padding:20px; width:60%; ">
+ 
+  <div class="mx-auto">
+
+  <form method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text"> Use Admin Email and Password for login.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" placeholder="Password" name="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  
+  <button type="submit" class="btn btn-info">Login</button>
+</form>
+   
+</div>
+  
+  </div>
+{% endblock body %}
+
