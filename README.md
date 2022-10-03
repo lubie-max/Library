@@ -15,7 +15,7 @@ Project is built with Django Framework written in Python Language and Bootstrap 
 
 
 👉 Installations
-Create virtual envornment and activate it
+  Create virtual envornment and activate it
  1. > virtualenv env
  2. >.\env\Scripts\activate.ps1 
  3. > pip install django
