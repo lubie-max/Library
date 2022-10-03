@@ -8,13 +8,13 @@ Project is built with Django Framework written in Python Language and Bootstrap 
 👉 Prerequisites 
  1. python version 3 or onword
  2. Django version 3 or onword
-🟢 Django==3.2.15
-🟢 Pillow==9.2.0
-🟢 mysqlclient==2.1.1
+
+1. 🟢 Django==3.2.15
+2. 🟢 Pillow==9.2.0
+3. 🟢 mysqlclient==2.1.1
 
 
 👉 Installations
-
 Create virtual envornment and activate it
  1. virtualenv env
  2. >> .\env\Scripts\activate.ps1 
@@ -47,8 +47,18 @@ creating and configuring mysql database with project.
 
 
 
-👉 Contact 
+👉 creating Model schema, url dispatching and Logic.
+1. created Book Table with uuid as primary key and other fields like title , description etc.
+1. register table in admin.py
+  >>>> admin.site.register(Book)
+1.  
+1. created  Book Table 
 
+
+
+
+
+👉 Contact 
  @ iamlubie.shaikh@gmail.com /
  @ shaikhls2421@gmail.com
 
