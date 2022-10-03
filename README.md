@@ -16,9 +16,9 @@ Project is built with Django Framework written in Python Language and Bootstrap 
 
 👉 Installations
 Create virtual envornment and activate it
- 1. virtualenv env
- 2. >> .\env\Scripts\activate.ps1 
- 3. pip install django
+ 1. > virtualenv env
+ 2. >.\env\Scripts\activate.ps1 
+ 3. > pip install django
  
 start django Project and create app
  1. django-admin startproject project-name
@@ -26,8 +26,8 @@ start django Project and create app
 
 creating and configuring mysql database with project.
   Open command line client (from mysql) and enter root password(login).
-  1. mysql> CREATE DATABASE db_name;
-  2. mysql> USE db_name
+  1. > mysql> CREATE DATABASE db_name;
+  2. > mysql> USE db_name
 
   In settings.py at DATABASE configuration
     
@@ -43,16 +43,19 @@ creating and configuring mysql database with project.
     }
 
   Installing mysqlclient 
-  1. pip install mysqlclient
+  1. > pip install mysqlclient
 
 
 
 👉 creating Model schema, url dispatching and Logic.
 1. created Book Table with uuid as primary key and other fields like title , description etc.
-1. register table in admin.py
-  >>>> admin.site.register(Book)
-1.  
-1. created  Book Table 
+2. register table in admin.py
+  > admin.site.register(Book)
+3. and migrate 
+> python manage.py makemigrations
+> python manage.py migrate
+
+
 
 
 
