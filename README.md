@@ -1,6 +1,6 @@
 👉Library 📚 Admin 👈
 
-👉 Describtion 
+👉 Description 
 This project is for Library Admin who can add , delete and update books of Library. anyone can access books but, admin only can operate the Library.
 Project is built with Django Framework written in Python Language and Bootstrap css library for styling.
 
